@@ -58,7 +58,7 @@
                 </div>
 
                 <button type="submit" class="sign-in-btn">Sign in</button>
-                <p class="signup-text">Don't have an account? <a href="${url.registrationUrl}">Sign up</a></p>
+                <!-- <p class="signup-text">Don't have an account? <a href="${url.registrationUrl}">Sign up</a></p> -->
             </form>
         </div>
 
