@@ -65,7 +65,7 @@
 
     <div class="email-container">
         <div class="header">
-            <img src="${url.resourcesPath}/img/saudi-re-logo.png" alt="Saudi Re Logo" />
+            <!--<img src="http://34.166.20.57/assets/images/logo-menu.svg" alt="Saudi Re Logo" />-->
             <h1>Password Reset Request</h1>
         </div>
         <div class="body">

@@ -76,7 +76,7 @@
 
     <div class="container">
         <div class="header">
-            <img src="your-logo-url-here" alt="Logo" class="logo">
+            <!--<img src="http://34.166.20.57/assets/images/logo-menu.svg" alt="Logo" class="logo">-->
             <h1>Account Verification</h1>
         </div>
 
