@@ -66,7 +66,7 @@
 <body>
     <div class="email-container">
         <div class="header">
-            <img src="${url.resourcesPath}/img/saudi-re-logo.png" alt="Saudi Re Logo">
+            <img src="${url.resourcesPath}/img/Esnad-logo.png" alt="Esnad Logo">
             <h1>Session Expired</h1>
         </div>
         <div class="body">

@@ -10,9 +10,9 @@
     <div class="container">
         <!-- Left Section -->
         <div class="login-section">
-            <div class="logo">
-                <img src="${url.resourcesPath}/img/saudi-re-logo.png" alt="Saudi Re Logo">
-            </div>
+            <!--<div class="logo">
+                 <img src="${url.resourcesPath}/img/Esnad-logo.png" alt="Esnad Logo">
+            </div>-->
             <h1>Log into your account</h1>
             <p class="welcome-text">Welcome back! Please enter your details</p>
             <#import "template.ftl" as layout>

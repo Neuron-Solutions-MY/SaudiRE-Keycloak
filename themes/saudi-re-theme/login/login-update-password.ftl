@@ -3,6 +3,14 @@
 
 <head>
     <title>Update Password</title>
+    <style>
+    .update-password-container {
+        background-image: url('${url.resourcesPath}/img/background.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+</style>
     <link rel="stylesheet" href="${url.resourcesPath}/css/update-password.css">
 </head>
 
@@ -10,7 +18,7 @@
     <div class="update-password-container">
         <div class="container">
             <div class="header">
-                <img src="${url.resourcesPath}/img/saudi-re-logo.png" alt="Logo" class="logo">
+                <!--<img src="${url.resourcesPath}/img/Esnad-logo.png" alt="Logo" class="logo">-->
                 <h1>Update Your Password</h1>
             </div>
             <div class="form-container">

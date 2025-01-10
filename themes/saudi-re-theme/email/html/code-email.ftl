@@ -55,7 +55,7 @@
 <body>
     <div class="email-container">
         <div class="header">
-            <img src="${url.resourcesPath}/img/saudi-re-logo.png" alt="Saudi Re Logo" />
+            <img src="${url.resourcesPath}/img/Esnad-logo.png" alt="Esnad Logo" />
         </div>
         <div class="body">
             <p>Dear ${user.email},</p>

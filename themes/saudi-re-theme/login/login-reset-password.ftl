@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reset Password</title>
     <link rel="stylesheet" href="${url.resourcesPath}/css/reset-password.css">
+    <style>
+    .forgot-password-container {
+        background-image: url('${url.resourcesPath}/img/background.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+</style>
 </head>
 <body>
     <div class="forgot-password-container">
@@ -24,7 +32,7 @@
                 </#if>
             <#else>
                  <div class="logo-container">
-            <img src="${url.resourcesPath}/img/saudi-re-logo.png" alt="Saudi Re Logo" />
+            <!--<img src="${url.resourcesPath}/img/Esnad-logo.png" alt="Saudi Re Logo" />-->
         </div>
                 <!-- Reset Password Form -->
                 <h2>Reset Your Password</h2>
