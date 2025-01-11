@@ -100,7 +100,12 @@
             form.submit();
         }
 
-
+        // Listen for keypress events
+         document.getElementById('input6').addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            document.querySelector('.confirm-btn').focus(); // Focus on the Sign In button
+        }
+    });
 
         </script>
 
