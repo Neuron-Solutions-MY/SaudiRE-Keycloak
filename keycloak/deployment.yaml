@@ -1,0 +1,100 @@
+# Namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: keycloak
+---
+# ConfigMap for Keycloak environment variables
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: keycloak-config
+  namespace: default
+data:
+  KEYCLOAK_USER: admin
+  KEYCLOAK_PASSWORD: password
+  DB_VENDOR: h2
+  DB_URL: jdbc:h2:mem:mydb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+  KEYCLOAK_HTTP_PORT: "8080"
+---
+# Keycloak Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: keycloak
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: keycloak
+  template:
+    metadata:
+      labels:
+        app: keycloak
+    spec:
+      containers:
+      - name: keycloak
+        image: me-central2-docker.pkg.dev/b2b-portal-uat-saudi-re/gcp-uat-b2bportal-gar-001/keycloak:cf5279d # Or a specific version
+        args: ["start", "--cache-stack=kubernetes", "--spi-login-protocol-openid-connect-legacy-logout-redirect-uri=true","--hostname-strict=false"]
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: keycloak-config
+        volumeMounts:
+        - name: keycloak-logs
+          mountPath: /opt/keycloak/standalone/log
+        env:
+        - name: KEYCLOAK_ADMIN
+          value: "admin"
+        - name: KEYCLOAK_ADMIN_PASSWORD
+          value: "admin"
+        - name: jgroups.dns.query
+          value: "keycloak"
+        - name: PROXY_ADDRESS_FORWARDING
+          value: "true"
+        - name: KC_HTTP_ENABLED
+          value: "true"
+        - name: KC_HTTP_RELATIVE_PATH
+          value: "/auth"
+        - name: KC_DB
+          value: "mssql"
+        - name: KC_DB_URL
+          value: "jdbc:sqlserver://10.19.4.3:1433;databaseName=keycloak;trustServerCertificate=true"
+        - name: KC_DB_URL_HOST
+          value: "10.19.4.3"
+        - name: KC_DB_URL_PORT
+          value: "1433"
+        - name: KC_DB_URL_DATABASE
+          value: "keycloak"
+        - name: KC_DB_USERNAME
+          value: "sqlserver"
+        - name: KC_DB_PASSWORD
+          value: '{Ci$H+-`*":Nt4:p'
+      volumes:
+      - name: keycloak-logs
+        emptyDir: {}
+---
+# Expose Keycloak Service via LoadBalancer (or NodePort)
+apiVersion: v1
+kind: Service
+metadata:
+  name: keycloak
+  labels:
+    app: keycloak
+spec:
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8080
+  - name: https
+    port: 8443
+    targetPort: 8443
+  - name: jgroup
+    port: 7600
+    targetPort: 7600
+
+  selector:
+    app: keycloak
+  type: LoadBalancer
