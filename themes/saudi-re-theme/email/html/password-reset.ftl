@@ -65,7 +65,7 @@
 
     <div class="email-container">
         <div class="header">
-            <!--<img src="http://34.166.20.57/assets/images/Esnad-logo.png" alt="Esnad Logo" />-->
+            <!--<img src="http://34.166.20.57/assets/images/Esnad-logo.png" alt="EsnadLogo" />-->
             <h1>Password Reset Request</h1>
         </div>
         <div class="body">
