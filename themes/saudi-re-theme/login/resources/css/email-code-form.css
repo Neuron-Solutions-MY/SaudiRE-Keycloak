@@ -1,0 +1,160 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    height: auto;
+    width: 70%; /* Adjusted width for smaller screens */
+    max-width: 750px; /* Maximum width for large screens */
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    margin-top: 10%;
+}
+
+h2 {
+    color: #333;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;    /* Center vertically */
+    margin-bottom: 10px;    /* Add some space below the logo */
+}
+
+.logo-container img{
+    padding: 15px;
+}
+
+.mail-icon{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Round the corners */
+    background-color:#8a9d7a;
+}
+p {
+    color: #475467;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 9%; /* Adjusted width for responsiveness */
+    height: 70px;
+    padding: 10px;
+    text-align: center;
+    border: 4px solid #9dbca7;
+    border-radius: 8px;
+    margin: 5px;
+    box-shadow: 0 4px 8px rgba(142, 175, 132, 0.75);
+    font-size: 48px;
+    color: #646264;
+}
+
+button {
+    background-color: #9dbca7;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #8a9d7a;
+}
+
+a {
+    color: #475467;
+}
+
+.cancel-btn,
+.confirm-btn {
+    background-color: #FFFFFF;
+    color: black;
+    padding: 10px 20px;
+    border: 1px solid #D0D5DD;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    width: 174px;
+    height: 44px;
+    margin-bottom: 10px;
+}
+
+.cancel-btn:hover,
+.confirm-btn:hover {
+    background-color: #2A4A35;
+    color: white
+}
+
+.logo{
+    background-color: #8a9d7a;
+    border-radius: 10%;
+    width: 5%;
+    height:5%
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    input[type="text"] {
+        width: 70%; /* Adjusting for smaller screens */
+        height: 45px;
+        font-size: 16px;
+    }
+
+    .cancel-btn,
+    .confirm-btn {
+        width: 100%; /* Full-width buttons for small screens */
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 18px; /* Adjust heading size for small screens */
+    }
+
+    p {
+        font-size: 14px; /* Adjust paragraph text size */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    input[type="text"] {
+        width: 10%; /* Full-width input field on very small screens */
+        height: 40px;
+        font-size: 48px;
+    }
+
+    .cancel-btn,
+    .confirm-btn {
+        width: 25%; /* Full-width buttons */
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 16px; /* Smaller heading for very small screens */
+    }
+
+    p {
+        font-size: 12px; /* Smaller paragraph text */
+    }
+}
